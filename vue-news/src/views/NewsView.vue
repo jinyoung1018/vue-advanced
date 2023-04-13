@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="user in users">{{ user.title }}</div>
+    <div v-for="user in this.$store.state.news">{{ user.title }}</div>
   </div>
 </template>
 
@@ -10,11 +10,12 @@ import { fetchNewsList } from '../api/index.js'
 
 
 export default {
-    data(){
-        return{
-            users:[]
-        }
-    },
+    // data(){
+    //     return{
+    //         users:[]
+    //     }
+    // },
+
     // created(){
     //     var vm = this;
     //     axios.get('https://api.hnpwa.com/v0/news/1.json')
@@ -27,19 +28,21 @@ export default {
 
     //     })
     // },
+
+
     created(){
-        // var vm = this;
-        console.log(this);
+        this.$store.dispatch('FETCH_NEWS');
+        // console.log(this);
 
-        fetchNewsList()
-        .then(response => {
-            console.log(this);
-            this.users = response.data;
-        })
-        .catch(function(error){
-            console.log(error);
+        // fetchNewsList()
+        // .then(response => {
+        //     console.log(this);
+        //     this.users = response.data;
+        // })
+        // .catch(function(error){
+        //     console.log(error);
 
-        })
+        // })
     },
 
 }
