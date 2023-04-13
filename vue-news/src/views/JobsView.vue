@@ -15,16 +15,18 @@ export default {
     },
 
     created(){
-        var vm = this;
+        // var vm = this;
         fetchJobsList()
-        .then(function(response){
-            console.log(response);
-            vm.jobs = response.data;
-        })
-        .catch(function(error){
-            console.log(error);
+        .then(response => this.jobs = response.data)
+        .catch(error => console.log(error));
+        // .then(function(response){
+        //     console.log(response);
+        //     vm.jobs = response.data;
+        // })
+        // .catch(function(error){
+        //     console.log(error);
 
-        })
+        // })
     },
 
 }

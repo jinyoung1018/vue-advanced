@@ -28,11 +28,13 @@ export default {
     //     })
     // },
     created(){
-        var vm = this;
+        // var vm = this;
+        console.log(this);
+
         fetchNewsList()
-        .then(function(response){
-            console.log(response);
-            vm.users = response.data;
+        .then(response => {
+            console.log(this);
+            this.users = response.data;
         })
         .catch(function(error){
             console.log(error);
