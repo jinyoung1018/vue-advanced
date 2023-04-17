@@ -12,6 +12,7 @@ export default createStore({
         news: [],
         jobs: [],
         ask: [],
+        user: {},
     },
 
     getters:{
