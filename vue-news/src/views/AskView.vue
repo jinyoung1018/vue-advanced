@@ -1,6 +1,10 @@
 <template>
     <div>
-        <div v-for="item in askItems">{{ item.title }}</div>
+       <p v-for="item in askItems">
+         <a :href="item.url">{{  item.title }}</a>
+         <samll>{{item.time_ago}} by {{item.user}}</samll>
+       </p>
+        
     </div>
   
 </template>
