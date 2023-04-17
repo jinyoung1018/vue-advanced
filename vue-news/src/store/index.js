@@ -20,6 +20,9 @@ export default createStore({
     getters:{
         fetchedAsk(state){
             return state.ask;
+        },
+        fetchedItem(state){
+            return state.item;
         }
 
     },
