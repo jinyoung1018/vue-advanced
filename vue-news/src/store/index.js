@@ -1,19 +1,23 @@
 // import Vue from 'vue';
 import { createStore} from 'vuex';
-import { fetchNewsList } from '../api/index.js'
+import { fetchNewsList,fetchJobsList } from '../api/index.js'
+
 
 
 // Vue.use(Vuex);
 
 export default createStore({
     state: {
-        news: []
+        news: [],
+        jobs: [],
     },
 
     mutations:{
         SET_NEWS(state, news) {
             state.news = news;
-
+        },
+        SET_JOBS(state,jobs){
+            state.jobs = jobs;
         }
 
     },
@@ -30,6 +34,17 @@ export default createStore({
                 console.log(error);
             });
 
+        },
+
+        FETCH_JOBS({commit}){
+
+            fetchJobsList()
+            .then(({ data })=> {
+                commit('SET_JOBS', data);
+            })
+            .catch(error=>{
+                console.log(error);
+            });
         }
     }
    
