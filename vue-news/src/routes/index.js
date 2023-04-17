@@ -25,7 +25,7 @@ const routes = [
     component: AskView   
   },
   {
-    path: '/item',
+    path: '/item/:id',
     component: ItemView   
   }, 
   {
