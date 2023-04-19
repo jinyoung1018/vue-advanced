@@ -18,12 +18,12 @@ export default {
         UserProfile,
     },
 
-    computed: {
-        userInfo(){
-            return this.$store.state.user;
-        }
+    // computed: {
+    //     userInfo(){
+    //         return this.$store.state.user;
+    //     }
 
-    },
+    // },
 
     created(){
         console.log(this.$route.params.id);
