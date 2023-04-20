@@ -5,13 +5,13 @@
                 </div>
                 <div class="user-description">
                   <div>
-                    {{ userInfo.id }}
+                    {{ info.id }}
                   </div>
                     <!-- <router-link :to="`/user/${fetchedItem.user}`">
                         {{ userInfo.id }}
                     </router-link> -->
                     <div class="time" >
-                      {{ userInfo.created }}
+                      {{ info.created }}
                     </div>
                 </div>            
             </div>
@@ -19,12 +19,15 @@
 
 <script>
 export default {
-  computed: {
-        userInfo(){
-            return this.$store.state.user;
-        }
-
+  props: {
+        info: Object
     },
+  // computed: {
+  //       userInfo(){
+  //           return this.$store.state.user;
+  //       }
+
+  //   },
 
 }
 </script>
