@@ -13,7 +13,7 @@ export default createStore({
         jobs: [],
         ask: [],
         user: {},
-        item: [],
+        item: {},
 
     },
 
